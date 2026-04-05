@@ -4,6 +4,8 @@ os.setlocale("pt_BR.UTF-8", "all")
 
 math.randomseed(os.time())
 
+local max = 10 -- valor alto colocado para mostrar o algoritmo da ordenação bolha com precisão.
+
 local function bubble(arr)
         if not arr then
                 return false
@@ -25,14 +27,26 @@ end
 
 local nums = {}
 
-for i = 1, 10 do
-        nums[i] = math.random(50)
+for i = 1, max do
+        nums[i] = math.random(max)
 end
 
--- imprimir array não sorteado aqui
+print('Array não sorteado: ')
+
+for index, value in ipairs(nums) do
+        print(index .. '\t' .. value)
+end
+
+print()
+
 if not bubble(nums) then
         print('Nums is invalid!')
         os.exit(0)
 end
 
--- imprimir array sorteado aqui.
+print()
+
+print('Array sorteado: ')
+for index, value in ipairs(nums) do
+        print(index .. '\t' .. value)
+end
