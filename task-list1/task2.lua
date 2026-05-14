@@ -11,9 +11,9 @@ local media = (n1 + n2) / 2
 print('Dados gerados: ', n1, n2, freq, media)
 
 if media >= 7 and freq >= 75 then
-        print("Aluno está aprovado!")
+   print("Aluno está aprovado!")
 elseif media >= 6 and freq >= 75 then
-        print("Aluno está na prova final")
+   print("Aluno está na prova final")
 else
-        print("Aluno está reprovado.")
+   print("Aluno está reprovado.")
 end

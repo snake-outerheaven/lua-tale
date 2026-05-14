@@ -12,16 +12,16 @@ local c = math.random(0, 20)
 local tipo = ""
 
 if not (a < b + c) and not (b < a + c) and not (c < b + a) then
-        print('não se pode fazer um triângulo com', a, b, c)
-        os.exit(0)
+   print('não se pode fazer um triângulo com', a, b, c)
+   os.exit(0)
 end
 
 if a == b and a == c then
-        tipo = tipo .. "Equilátero"
+   tipo = tipo .. "Equilátero"
 elseif a == b or a == c or b == c then -- faltou verificar b == c ;-;
-        tipo = tipo .. "Isósceles"
+   tipo = tipo .. "Isósceles"
 else
-        tipo = tipo .. "Escaleno"
+   tipo = tipo .. "Escaleno"
 end
 
 print('O tipo de triângulo que ' .. a .. ', ' .. b .. ' e ' .. c .. ' formam é ' .. tipo .. '.')

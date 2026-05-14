@@ -14,19 +14,19 @@ local altura_fmt = string.format("%.2f", altura)
 local imc_fmt    = string.format("%.2f", imc)
 
 print("Indivíduo com peso " .. peso_fmt ..
-        " kg e altura " .. altura_fmt ..
-        " m tem IMC = " .. imc_fmt)
+      " kg e altura " .. altura_fmt ..
+      " m tem IMC = " .. imc_fmt)
 
 if imc < 18.5 then
-        print("Classificação: Abaixo do peso")
+   print("Classificação: Abaixo do peso")
 elseif imc >= 18.5 and imc < 25 then
-        print("Classificação: Peso normal")
+   print("Classificação: Peso normal")
 elseif imc >= 25 and imc < 30 then
-        print("Classificação: Sobrepeso")
+   print("Classificação: Sobrepeso")
 elseif imc >= 30 and imc < 35 then
-        print("Classificação: Obesidade grau I")
+   print("Classificação: Obesidade grau I")
 elseif imc >= 35 and imc < 40 then
-        print("Classificação: Obesidade grau II")
+   print("Classificação: Obesidade grau II")
 else
-        print("Classificação: Obesidade grau III (mórbida)")
+   print("Classificação: Obesidade grau III (mórbida)")
 end

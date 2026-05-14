@@ -7,7 +7,7 @@ local y = math.random(0, 20)
 local z = math.random(0, 20)
 
 if x < y + z and y < x + z and z < x + y then
-        print('Um triângulo pode ser formado com os lados:', x, y, z)
+   print('Um triângulo pode ser formado com os lados:', x, y, z)
 else
-        print('Não é possível formar um triângulo com os lados dados:', x, y, z)
+   print('Não é possível formar um triângulo com os lados dados:', x, y, z)
 end
