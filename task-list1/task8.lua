@@ -5,13 +5,15 @@
 os.setlocale("pt_BR.UTF-8", "all")
 math.randomseed(os.time())
 
+local size = 100
 
 local a = {}
 
-for i = 1, 10, 1 do
+for i = 1, size, 1 do
         a[i] = math.random(1, 100)
 end
 
+table.sort(a)
 
 for i = 1, #a, 1 do
         if (a[i] % 3 == 0) then
@@ -20,3 +22,7 @@ for i = 1, #a, 1 do
                 print(a[i] .. ' não é múltiplo de 3')
         end
 end
+
+
+-- revisando: em Lua, #table retorna o tamanho da table.
+-- expressões numéricas que retornam 0 e >= 1 não recebem valor falso ou verdadeiro respectivamente como no C e derivados.
