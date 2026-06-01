@@ -30,7 +30,7 @@ local imc = weight / (height * height)
 for _, faixa in ipairs(table_imc) do
         if imc <= faixa.limite then
                 classif = faixa.classif
-                break -- Interrompe o laço assim que encontra a faixa correta
+                break 
         end
 end
 
