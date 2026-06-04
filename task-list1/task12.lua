@@ -7,24 +7,28 @@
 os.setlocale("pt_BR", "all")
 math.randomseed(os.time())
 
+-- Tabela de configuração das faixas de crédito
 local table_cef = {
-        { lim = 500,       cred = 0 },
-        { lim = 1000,      cred = 0.3 },
-        { lim = 3000,      cred = 0.4 },
-        { lim = math.huge, cred = 0.5 }
+    { lim = 500,       cred = 0.0 },
+    { lim = 1000,      cred = 0.3 },
+    { lim = 3000,      cred = 0.4 },
+    { lim = math.huge, cred = 0.5 }
 }
 
-local function quick_test()
-    local test_values = {200, 750, 1500, 3500}
-    
-    for _, balance in ipairs(test_values) do
-        local credit = balance <= 500 and 0 or
-                      balance <= 1000 and balance * 0.3 or
-                      balance <= 3000 and balance * 0.4 or
-                      balance * 0.5
-        
-        print(string.format("Saldo: R$ %.2f → Crédito: R$ %.2f", balance, credit))
+local function calcular_credito_tabela(saldo)
+    for _, faixa in ipairs(table_cef) do
+        if saldo <= faixa.lim then
+            return saldo * faixa.cred
+        end
     end
+    return 0
 end
 
-quick_test()
+print("--- SIMULAÇÃO DE CRÉDITO CEF ---")
+for i = 1, 5 do
+    local saldo_aleatorio = math.random() * 5000
+    local valor_credito = calcular_credito_tabela(saldo_aleatorio)
+
+    print(string.format("Cliente %d | Saldo Médio: R$ %7.2f → Crédito: R$ %7.2f",
+        i, saldo_aleatorio, valor_credito))
+end
